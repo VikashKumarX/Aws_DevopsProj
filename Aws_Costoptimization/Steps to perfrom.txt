@@ -1,0 +1,16 @@
+First login to AWS account Note delete all services as cost will occur
+we trying to achieve cot optimization by delete stale snaphot which not  attached to any volume 
+Then create ec2 after take snapshot of the volume attached to new ec2
+Then search for lambda , create  lambda function by custom name & set env to python after creating
+Then paste the code where you will see sample code 
+After save the file press deploy then after that click test 
+It will ask to create test event provide your testevent save it then run test again
+It will not run give error for permission denied then search for configuration increase the exceute time to 8 sec save it note it will chargeable
+Check the tab fpr permission you will one attached permission that is for cloudwatch we have to provide added permission according to error that displays
+search in iam for snapshot  we will not able to find then create a custom policy
+After that see dashboard all service select ec2 then provide earch for delete snapshot and describe snapshot 
+Save it give some name save done then apply this policy to to lambda function rerun the code
+You will find another error ec2 volume then again so to iam you can provide full access of ec2 or create new custom policy like before
+for custom policy we havee to select ec2 in that describe instance describe volume check it then save then apply policy to lambda func
+rerun the code this it will work successfully  now go to ec2 dahboard terminate the instance the volume will also delete 
+only snapshot remain if rerun the code this time it will be deletein the snaphot
