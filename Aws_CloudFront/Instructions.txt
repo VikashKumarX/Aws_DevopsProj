@@ -1,0 +1,40 @@
+Steps to create 
+Create AWS S3 bucket 
+give bucket name  for e.g. www.foobar.com
+select aws region 
+enable versioning (in case an object deleted we can recover delted object )
+block public access
+let object ownership set default
+let default encryption also
+Save this
+GO to permission enable static website hosting
+hosting set to default
+add index page name and error page name
+Then upload object to bucket into this 
+Add index and error pages
+one save again go to permission staic website section 
+copy link and try to open we will not able to open
+as we have block public access
+Note in cloudfront cost may occur
+Search cloudfront 
+create distribution
+choose origin domain as s3 there would be 
+multiple options to choose from where the data will be 
+rendered so 
+then come origin access select legacy accesss identification
+crete new oai after that select update bucket policy
+select redirect https to https
+select no web application firewall
+setting
+use only ameica and africa for demo purpose
+use whole word when u have glabl reach
+rest all should be default
+add index.html
+save it and started deploying 
+once doneyou will website link from there we can check if done or not as
+it takes 15-20 minsto get completed
+once done delete cloudfront first disable it 
+then after sometime delete button will activate
+then click delete so that later no cost occur.
+
+ 
