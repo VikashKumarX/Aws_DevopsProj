@@ -1,4 +1,4 @@
-# Project-2: Vprofile Project: Automated Setup of Multi Tier App, Locally
+# Automated Setup of Multi Tier App, Locally
 
 [*Project Source*](https://www.udemy.com/course/devopsprojects/?src=sac&kw=devops+projects)
 ![](images/vprofile-project.png)
@@ -14,7 +14,7 @@
 
 ### Bash Script for DB
 
-- In Project-1, we have setup our 3-Tier Application manually. This time we will create bash scripts to automate our VM creation/provisioning through Vagrantfile.
+- We will create bash scripts to automate our VM creation/provisioning through Vagrantfile.
 
 - First we will create `mysql.sh` file for our database.
 ```sh
