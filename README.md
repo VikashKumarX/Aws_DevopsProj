@@ -1,2 +1,2 @@
 # Aws_DevopsProj
-Project adding soon
+Sample Projects 
