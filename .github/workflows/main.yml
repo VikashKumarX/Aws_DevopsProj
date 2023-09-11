@@ -13,7 +13,7 @@ jobs:
       - name: Scripts
         run: |
           docker build -t app .
-          docker login - u reach2vikashkr -p dckr_pat_mqG-p0TWITK0Noe2ZyQ11ul5QIg
+          docker login - u uruser -p urpass
           docker tag app reach2vikashkr/tw
           docker push reach2vikashkr/tw
         
