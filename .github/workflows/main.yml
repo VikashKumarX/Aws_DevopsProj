@@ -1,0 +1,21 @@
+name: CI
+on: 
+  push:
+    branches: [ main ]
+  pull_request: 
+    branches: [main]  
+  workflow_dispatch:
+jobs:
+   build:
+     runs-on: ubntu-latest
+     steps:
+      - uses: actions/checkout@v2
+      - name: Scripts
+        run: |
+          docker build -t app .
+          docker login - u reach2vikashkr -p dckr_pat_mqG-p0TWITK0Noe2ZyQ11ul5QIg
+          docker tag app reach2vikashkr/tw
+          docker push reach2vikashkr/tw
+        
+        
+   
