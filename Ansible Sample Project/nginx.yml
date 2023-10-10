@@ -1,0 +1,14 @@
+---
+- name: Install nginx on webservers
+  hosts: all
+  become: true
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Strat nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes

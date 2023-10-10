@@ -1,0 +1,59 @@
+---
+- name  : Install & start nginx server
+  hosts: webservers
+  become: true
+	
+tasks:
+    - name : Update apt cache
+      apt:
+        update_cache: yes
+        when : ansible_os_family == 'Debian'
+		
+    - name : Install nginx
+      apt:
+        name: nginx
+        state: present
+        when: ansible_os_family == 'Debian'
+    - name : Start Nginx service
+      service:
+        name: nginx
+        state: started
+        when: ansible_os_family == 'Debian'
+		
+    - name : Enable Nginx service on boot	
+      service:
+         name: nginx
+         enables: yes
+         when: ansible_os_family == 'Debian'
+		
+    - name: Check if nginx is running
+        shell: systemctl is-active nginx
+        register: nginx_status
+        changed_when: false
+        failed_when: false
+		  
+    - name: Print Nginx status
+        debug:
+          msg: "Nginx is {{ niginx_status.stout }}"
+			
+			
+---
+ - name: Check free available space
+   hosts: webservers
+   become: true
+   
+   tasks:
+    - name: Get free spce
+      command: df -h
+      register: disk_space
+	  
+    - name: Store ouptut in file 
+      copy:
+        content: "{{ disk_space.stdout }}" 
+        dest: /path/to/output/file.txt
+
+---
+		
+		
+		
+	
