@@ -5,13 +5,13 @@ pipeline{
         stage("code"){
             steps{
                 echo "Cloning gitHub repo"
-                git url: "https://github.com/sayalishewale/jenkins-CICD.git",branch:'main'
+                git url: "https://github.com/vikashkumarx/jenkins-CICD.git",branch:'main'
             } 
         }
         stage("build"){
             steps{
                 echo "building code"
-                sh "docker build -t sayalishewale/node-app ."
+                sh "docker build -t reach2vikashkr/node-app ."
                 
                 
             }
@@ -22,7 +22,7 @@ pipeline{
             steps{
                 withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPass' , usernameVariable: 'dockerHubUser')]) {
                  sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                 sh "docker push sayalishewale/node-app:latest"
+                 sh "docker push reach2vikashkr/node-app:latest"
                 }
             }   
                 
